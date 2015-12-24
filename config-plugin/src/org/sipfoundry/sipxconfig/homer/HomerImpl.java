@@ -74,6 +74,7 @@ public class HomerImpl implements Homer, FeatureProvider, ProcessProvider {
     @Override
     public void getBundleFeatures(FeatureManager featureManager, Bundle b) {
         if (b == Bundle.CORE_TELEPHONY) {
+            b.addFeature(new LocationFeature("mysql"));
             b.addFeature(FEATURE_CAPTURE_SERVER);
             b.addFeature(FEATURE_WEB);
         }
